@@ -7,12 +7,13 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
 let count=0;
 for (let i=0; i<preferences.length; i++){
 
-  let firstSpichonees = preferences[i];
-  let secondSpichonees = preferences[[i]-1];
-  let thirdSpichonees = preferences[[[i]-1]-1];
+ var firstSpichonees = preferences[i];
+  var secondSpichonees = preferences[firstSpichonees-1];
+  var thirdSpichonees = preferences[secondSpichonees-1];
 
-  if (firstSpichonees != secondSpichonees && secondSpichonees!=thirdSpichonees && thirdSpichonees==(i+1) ){
+  if (firstSpichonees != secondSpichonees && secondSpichonees !=thirdSpichonees && thirdSpichonees == (i+1) ){
 
+  
 count++
   }
 }
